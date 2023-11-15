@@ -107,6 +107,7 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "exclude": [
-    "lcl-server.js"
+    "lcl-server.js",
+    "node_modules/**/*"
 ]
 }
