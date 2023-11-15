@@ -1,0 +1,26 @@
+{
+  "name": "wasm-ffmpeg-converter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "clean": "rm -rf .\\dist",
+    "compile": "npx --package typescript tsc",
+    "copy-files": "cp -r ./src/index.html ./dist && mkdir .\\dist\\assets\\@ffmpeg && cp -r ./src/style.css ./dist && cp -r ./node_modules/@ffmpeg/* ./dist/assets/@ffmpeg",
+    "build": "npm run clean && npm run compile && npm run copy-files",
+    "build:dev": "npm run build && node lcl-server.js",
+    "watch": "tsc --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg/core": "^0.12.4",
+    "@ffmpeg/core-mt": "^0.12.4",
+    "@ffmpeg/ffmpeg": "^0.12.7",
+    "@ffmpeg/util": "^0.12.1",
+    "connect": "^3.7.0",
+    "serve-static": "^1.15.0",
+    "tsc": "^2.0.4"
+  }
+}
